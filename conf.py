@@ -141,7 +141,9 @@ latex_documents = [
      'Sphinx', 'manual'),
 ]
 
-
+html_sidebars = {
+    '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'],
+}
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
