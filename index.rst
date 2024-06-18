@@ -8,10 +8,10 @@ Architecting on AWS メモ&補足集
    
    src/0.ipynb
    src/1.ipynb
-   src/2.ipynb
-   src/3.ipynb
+   src/02-1.ipynb
+   src/03.ipynb
    src/4.ipynb
-   src/5.ipynb
+   src/05.ipynb
    src/6.ipynb
    src/7.ipynb
    src/8.ipynb
