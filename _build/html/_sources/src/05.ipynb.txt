@@ -4,7 +4,11 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# 【ワーク 3 】 AI プロジェクト立案"
+    "# 【ワーク 3 】 AI プロジェクト立案\n",
+    "\n",
+    "本日の学びを自身に当てはめて考えましょう  \n",
+    "現場の課題が AI によって解決できるかどうか精査しましょう。  \n",
+    "ワークシートは[こちら](https://docs.google.com/spreadsheets/d/1ZL7swqoJ7jeFwz5h6iKuzj29hIdAaCQU/edit?usp=sharing&ouid=102712789547541073394&rtpof=true&sd=true)を参照してください。"
    ]
   },
   {
