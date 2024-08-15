@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【ワーク 2 】 自動機械学習でモデル構築をする &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="【ワーク 3 】 AI プロジェクト立案" href="05.html" />
+    <link rel="prev" title="【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）" href="03.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0.html#0.AI-ビジネス-アジェンダ企画">0.AI ビジネス アジェンダ企画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-1.html">【ワーク 1 】 画像分類モデルの作成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">【ワーク 2 】 自動機械学習でモデル構築をする</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#環境構築">環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#自動機械学習を実装する">自動機械学習を実装する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#【オプション】モデルの確認">【オプション】モデルの確認</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【ワーク 3 】 AI プロジェクト立案</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">【ワーク 2 】 自動機械学習でモデル構築をする</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/04.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="【ワーク-2-】-自動機械学習でモデル構築をする">
+<h1>【ワーク 2 】 自動機械学習でモデル構築をする<a class="headerlink" href="#【ワーク-2-】-自動機械学習でモデル構築をする" title="Link to this heading"></a></h1>
+<p>本章では、デモデータを使用し AI モデルの構築を体験します。</p>
+<section id="環境構築">
+<h2>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">実装環境として Azure Machine Learning というサービスを利用します。</div>
+<div class="line">Azure のトップページからリソースの作成をしてください。</div>
+</div>
+<p><img alt="1" src="../_images/011.png" /></p>
+<p>リソース作成の設定を行います。 - リソースグループ：Azure AIとおなじものor ご自身の名字で新規作成（例koike） - 名前:一意の名前（例）demomlapp名字 - リージョン: Azure AI とおなじリージョン <img alt="2" src="../_images/021.png" /></p>
+<p>入力ができたら、確認及び作成を行います。</p>
+<p>作成後、直接リソースに遷移するか、リソースグループ上にあるワークスペース名をクリックし、表示された画面にある、[スタジオの起動]をクリックします。</p>
+<p><img alt="3" src="../_images/031.png" /></p>
+<p>スタジオが起動できました。</p>
+</section>
+<section id="自動機械学習を実装する">
+<h2>自動機械学習を実装する<a class="headerlink" href="#自動機械学習を実装する" title="Link to this heading"></a></h2>
+<p>Azure Machine Learning スタジオで、 [自動 ML] ページ を表示します。</p>
+<p>次の設定で<code class="docutils literal notranslate"><span class="pre">新規自動</span> <span class="pre">ML</span> <span class="pre">ジョブ</span></code>を選択し次のユーザー インターフェイスへ進めます。</p>
+<p><img alt="home" src="../_images/home.png" /></p>
+<p>基本設定:</p>
+<ul class="simple">
+<li><p>ジョブ名: diabetes-automl</p></li>
+<li></li>
+<li><p>説明: 糖尿病患者の予測モデル</p></li>
+<li><p>タグ: “なし”**</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">[次へ]</span></code>を選択し次のページに遷移します。</p>
+<p>タスクの種類とデータ:</p>
+<ul class="simple">
+<li><p>タスクの種類の選択: 分類</p></li>
+<li><p>データセットの選択:<code class="docutils literal notranslate"><span class="pre">作成</span></code>を選択し新しくデータセットを作成します。</p>
+<ul>
+<li><p>名前: diabetes</p></li>
+<li><p>説明: 糖尿病患者のデータ</p></li>
+<li><p>種類: 表形式</p></li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">次へ</span></code>を選択します。</p>
+<p>データ ソース:<code class="docutils literal notranslate"><span class="pre">ローカルから</span></code>を選び、データをアップロードします。</p>
+<p>データ検証のスキップ: “選択しないでください”**</p>
+<p>設定: = [ファイル形式]: 区切り記号付き = [区切り記号]: コンマ = [エンコード]: UTF-8 = [列ヘッダー]: 最初のファイルにのみヘッダーを付ける = [行のスキップ]: なし - データセットに複数行のデータを含める: 選択しない**</p>
+<p>次の設定</p>
+<ul class="simple">
+<li><p>スキーマ:パス 以外のすべての列を含める</p></li>
+<li><p>自動的に検出された型を確認する bike-rentals データセットを作成した後に選びます。</p></li>
+</ul>
+<p>タスク設定:</p>
+<ul class="simple">
+<li><p>タスクの種類: 　分類</p></li>
+<li><p>データセット: diabetes</p></li>
+</ul>
+<p><img alt="01" src="../_images/012.png" /></p>
+<p>選択ができたら次へを選択します。作成したデータが出力されないときは適宜<code class="docutils literal notranslate"><span class="pre">更新</span></code>を押してください</p>
+<ul class="simple">
+<li><p>ターゲット列: outcome (整数)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">追加の構成設定を表示する</span></code>を選択</p>
+<ul class="simple">
+<li><p>プライマリ Accuracy</p></li>
+</ul>
+<p><img alt="02" src="../_images/022.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">制限</span></code>を展開し、最大試行回数を 3 に設定します。</p>
+<p>検証とテスト: - 検証の種類: 自動 - テスト データセット: なし</p>
+<p><img alt="03" src="../_images/032.png" /></p>
+<p>画像のように設定ができましたら、<code class="docutils literal notranslate"><span class="pre">次へ</span></code>を選択しましょう。</p>
+<p>コンピューティング: デフォルトの設定のままで構いません</p>
+<ul class="simple">
+<li><p>コンピューティングの種類を選択: サーバーレス</p></li>
+<li></li>
+<li><p>仮想マシンのレベル: 専用</p></li>
+<li><p>仮想マシンのサイズ: Standard_DS3_V2</p></li>
+<li><p>インスタンスの数: 1</p></li>
+</ul>
+<p>次へを選択し、最後に<code class="docutils literal notranslate"><span class="pre">トレーニング</span> <span class="pre">ジョブを送信</span></code>します。 自動的に開始されます。 ジョブが完了するまでお待ちください。 しばらく時間がかかる場合があります。</p>
+<section id="【オプション】モデルの確認">
+<h3>【オプション】モデルの確認<a class="headerlink" href="#【オプション】モデルの確認" title="Link to this heading"></a></h3>
+<p>自動機械学習ジョブが完了したら、トレーニングした最適なモデルを確認できます。</p>
+<p>自動機械学習のジョブの [概要] タブで、最適なモデルの概要を確認します。</p>
+<p>最適なモデルの [アルゴリズム名] の下のテキストを選び、詳細を表示します。</p>
+<p>[メトリック] タブを選択し、residuals グラフと predicted_true グラフがまだ選択されていない場合は選択します。</p>
+<p><img alt="mofrl" src="../_images/052.png" /></p>
+<div class="line-block">
+<div class="line">ここまでで実装は以上です。</div>
+<div class="line">講座の中でインプットをおこなった知識のみでモデル構築ができました。</div>
+<div class="line">実現場でもデータサイエンティストを抱えていない企業さまはこれらのようなノーコードツールを使用し、AI の開発やデータ分析をおこなってデータの利活用を進めていらっしゃいます。</div>
+</div>
+<p>最後にノーコード AI 開発のメリットとデメリットを考えてみましょう。</p>
+<p>参考 - <a class="reference external" href="https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-automated-ml?view=azureml-api-2">自動機械学習とは</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03.html" class="btn btn-neutral float-left" title="【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05.html" class="btn btn-neutral float-right" title="【ワーク 3 】 AI プロジェクト立案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
