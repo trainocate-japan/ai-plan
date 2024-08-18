@@ -53,7 +53,20 @@
   {
    "cell_type": "markdown",
    "metadata": {},
-   "source": []
+   "source": [
+    "## 2024/08/19 講義情報\n",
+    "\n",
+    "zoom : https://trainocate-japan.zoom.us/j/95523178898?pwd=x8a3uZezoeoEhuKdylxbejqImoQ1K6.1\n",
+    "\n",
+    "ミーティング ID: 955 2317 8898  \n",
+    "パスコード: 766647  \n",
+    "\n",
+    "ファイルの受け渡しなどに利用します。\n",
+    "\n",
+    "Excel：https://docs.google.com/spreadsheets/d/1klIR0392khouyreFC4ST3BIn-4y5Au1I/edit?usp=sharing&ouid=102712789547541073394&rtpof=true&sd=true\n",
+    "\n",
+    "ワークデータ：https://drive.google.com/file/d/1lrD1Xa7F8JOrkTxx9deQbfgXdRozUHiC/view?usp=drive_link"
+   ]
   }
  ],
  "metadata": {
