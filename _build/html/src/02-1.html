@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）" href="03.html" />
+    <link rel="next" title="【補足】 API での推論（AzureAIを使用した画像とテキスト分析）" href="03.html" />
     <link rel="prev" title="〜研修へようこそ" href="0.html" /> 
 </head>
 
@@ -62,14 +62,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#CustomVision-で画像分類モデルを作成">CustomVision で画像分類モデルを作成</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#プロジェクト作成">プロジェクト作成</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#CustomVision-を用いた画像処理・学習">CustomVision を用いた画像処理・学習</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#モデルの検証・テスト">モデルの検証・テスト</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#モデルのデプロイ">モデルのデプロイ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#モデルの検証・テスト">モデルの検証・テスト</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#【発展】">【発展】</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#【補足】モデルのデプロイ">【補足】モデルのデプロイ</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#まとめ">まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">【補足】 API での推論（AzureAIを使用した画像とテキスト分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04.html">【ワーク 2 】 自動機械学習でモデル構築をする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【ワーク 3 】 AI プロジェクト立案</a></li>
 </ul>
@@ -150,14 +153,14 @@
 <ul class="simple">
 <li><p>Name: demo+名前+pro</p></li>
 <li><p>Resource: 先ほど作成した Azure AI のリソースの名前</p></li>
-<li><p>ProjectTypes: Classification
-その他、デフォルトの設定</p></li>
+<li><p>ProjectTypes: Classification</p></li>
 </ul>
+<p>その他、デフォルトの設定</p>
 <p>最後に CreateProject を選択し、プロジェクトの作成を行います。</p>
 </section>
 <section id="CustomVision-を用いた画像処理・学習">
 <h3>CustomVision を用いた画像処理・学習<a class="headerlink" href="#CustomVision-を用いた画像処理・学習" title="Link to this heading"></a></h3>
-<p><a class="reference external" href="https://drive.google.com/drive/folders/1LcV85Xp6LlyCZaef3k4iHkIrPfGdbza9?usp=sharing">こちら</a>より学習にて使用するデータのダウンロードを行って下さい。</p>
+<p><a class="reference external" href="https://drive.google.com/file/d/1lrD1Xa7F8JOrkTxx9deQbfgXdRozUHiC/view?usp=drive_link">こちら</a>より学習にて使用するデータのダウンロードを行って下さい。</p>
 <p>次に画像分類の モデル を作成するための 「画像の追加(add images)」をクリックし、サンプルデータをアップロードします。</p>
 <p><img alt="addimage" src="../_images/01.jpg" /></p>
 <div class="line-block">
@@ -168,13 +171,17 @@
 <p><img alt="addlabel" src="../_images/02.jpg" /></p>
 <div class="line-block">
 <div class="line">こちらで犬の画像に対して dog というラベルを紐づけることができました。 猫の画像に対しても同じ処理を実装しましょう。</div>
-<div class="line">下記から、画像をアップロードできます。 <img alt="image1" src="../_images/03.jpg" /></div>
+<div class="line">下記から、画像をアップロードできます。</div>
 </div>
-<p>猫の画像には cat というラベルを紐づけてあげましょう。 <img alt="addcat" src="../_images/05.jpg" /></p>
+<p><img alt="image1" src="../_images/03.jpg" /></p>
+<p>猫の画像には cat というラベルを紐づけてあげましょう。</p>
+<p><img alt="addcat" src="../_images/05.jpg" /></p>
 <p>ここまでで画像分類モデルの作成に必要な犬と猫の画像データとそれぞれに答えとなる犬・猫のラベルを降ることができました。学習に必要な教師データの用意ができましたので学習を行います。</p>
-<p>画面右絵の⚙マークの Train ボタンを選択してください。 <img alt="trainmodel" src="../_images/06.jpg" /></p>
+<p>画面右絵の⚙マークの Train ボタンを選択してください。</p>
+<p><img alt="trainmodel" src="../_images/06.jpg" /></p>
 <p>Quick Training を選択し、Trainをクリックしてモデルをトレーニングします。（トレーニングには数分-10分ほどかかります。お手洗い休憩などをおとりください。）</p>
-<p>トレーニングが完了したら、モデルのパフォーマンスを評価します。 <img alt="data" src="../_images/07.jpg" /></p>
+<p>トレーニングが完了したら、モデルのパフォーマンスを評価します。</p>
+<p><img alt="data" src="../_images/07.jpg" /></p>
 </section>
 <section id="モデルの検証・テスト">
 <h3>モデルの検証・テスト<a class="headerlink" href="#モデルの検証・テスト" title="Link to this heading"></a></h3>
@@ -185,12 +192,22 @@
 <li><p>精度が100% 出ないのはなぜか</p></li>
 <li><p>精度向上をするにはどうしたらいいか？</p></li>
 </ul>
-<p>また、画面の右上の Predictions を選択するとモデルのテストをすることができます。</p>
-<p><img alt="pre" src="https://learn.microsoft.com/ja-jp/azure/ai-services/custom-vision-service/media/test-your-model/predictions-tab.png" /></p>
+<p>【補足】 画面の右上の Predictions を選択するとモデルのテストをすることができます。</p>
 <p>試しに、ダウンロードをした画像と犬でも猫でもない画像を Web からダウンロードし、推論をさせてみましょう。 犬でも猫でもない画像に対してもどちらかの予測結果が出力されたのではないでしょうか。 こちらも特化型 AI の特徴です。生成 AI のような汎用型の AI ではないため、学習をした際のラベルのどちらかに予測結果が推論されます。</p>
+<section id="【発展】">
+<h4>【発展】<a class="headerlink" href="#【発展】" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Q:モデルの精度向上をさせましょう。</div>
+<div class="line">実装結果からもわかるとおり、モデルの精度が十分ではありません。以下のようなデータの前処理を行い再学習をしましょう。</div>
+</div>
+<ul class="simple">
+<li><p>データの見直し</p></li>
+<li><p>データの追加・かさ増し</p></li>
+</ul>
 </section>
-<section id="モデルのデプロイ">
-<h3>モデルのデプロイ<a class="headerlink" href="#モデルのデプロイ" title="Link to this heading"></a></h3>
+</section>
+<section id="【補足】モデルのデプロイ">
+<h3>【補足】モデルのデプロイ<a class="headerlink" href="#【補足】モデルのデプロイ" title="Link to this heading"></a></h3>
 <p>モデルの精度が満足いく場合は、「Publish（デプロイ）」をクリックすることによってモデルをデプロイします。</p>
 <p>デプロイされたモデルにアクセスするためのエンドポイントURLやAPIキーが Prediction URL から提供されます。</p>
 <p><img alt="datadlou" src="../_images/08.jpg" /></p>
@@ -219,7 +236,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="0.html" class="btn btn-neutral float-left" title="〜研修へようこそ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="03.html" class="btn btn-neutral float-right" title="【ワーク 2 】 API での推論（AzureAIを使用した画像とテキスト分析）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03.html" class="btn btn-neutral float-right" title="【補足】 API での推論（AzureAIを使用した画像とテキスト分析）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
