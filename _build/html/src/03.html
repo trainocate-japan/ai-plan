@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>【補足】 API での推論（AzureAIを使用した画像とテキスト分析） &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -100,7 +100,7 @@
            <div itemprop="articleBody">
              
   <section id="【補足】-API-での推論（AzureAIを使用した画像とテキスト分析）">
-<h1>【補足】 API での推論（AzureAIを使用した画像とテキスト分析）<a class="headerlink" href="#【補足】-API-での推論（AzureAIを使用した画像とテキスト分析）" title="Link to this heading"></a></h1>
+<h1>【補足】 API での推論（AzureAIを使用した画像とテキスト分析）<a class="headerlink" href="#【補足】-API-での推論（AzureAIを使用した画像とテキスト分析）" title="この見出しへのパーマリンク"></a></h1>
 <p>Lab 1 にて作成した、Azure AIリソースを使用して、機械学習モデルを使用した推論を行います。 今回は画像処理を行います。</p>
 <div class="line-block">
 <div class="line">実装環境として Azure Machine Learning というサービスを利用します。</div>
@@ -113,7 +113,7 @@
 <p><img alt="3" src="../_images/031.png" /></p>
 <p>スタジオが起動できました。</p>
 <section id="【補足：コンピューティングインスタンスの作成】">
-<h2>【補足：コンピューティングインスタンスの作成】<a class="headerlink" href="#【補足：コンピューティングインスタンスの作成】" title="Link to this heading"></a></h2>
+<h2>【補足：コンピューティングインスタンスの作成】<a class="headerlink" href="#【補足：コンピューティングインスタンスの作成】" title="この見出しへのパーマリンク"></a></h2>
 <p>Azure ML のホーム画面の左側の目次タブからコンピューティングを選択します。</p>
 <p><img alt="4" src="../_images/041.png" /></p>
 <p>コンピューティングから新規を選択します。 仮想マシンの種類が様々、ありますが、今回は一番オーソドックスなコンピューティングインスタンスを作成します。</p>
@@ -125,7 +125,7 @@
 <li><p>その他、デフォルト設定のまま作成を選択。</p></li>
 </ul>
 <section id="Azure-AI-サービスを用いた推論">
-<h3>Azure AI サービスを用いた推論<a class="headerlink" href="#Azure-AI-サービスを用いた推論" title="Link to this heading"></a></h3>
+<h3>Azure AI サービスを用いた推論<a class="headerlink" href="#Azure-AI-サービスを用いた推論" title="この見出しへのパーマリンク"></a></h3>
 <p>Notebook を開く。 下記の＋からファイルのアップロードを選択、<a class="reference external" href="https://drive.google.com/file/d/1rdq7Ib6tfmhREoe02mO5Hkje9owa51st/view?usp=sharing">こちら</a>のNotebookをアップロードする。</p>
 <p>【ノートブックの設定】 - コンピューティング：Azure Machine Learning Serverless〜 を選択</p>
 <p><img alt="de" src="../_images/061.jpg" /></p>
@@ -139,13 +139,13 @@
 </section>
 </section>
 <section id="環境構築">
-<h2>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h2>
+<h2>環境構築<a class="headerlink" href="#環境構築" title="この見出しへのパーマリンク"></a></h2>
 <p>実装をするための環境の読み込みを行います。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>!pip install azure-cognitiveservices-vision-computervision
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>azure-cognitiveservices-vision-computervision
 </pre></div>
 </div>
 </div>
@@ -182,19 +182,19 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /home/trusted-service-user/
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>#　モジュールの読み込み
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
-from msrest.authentication import CognitiveServicesCredentials
-from PIL import Image
-import os
-# 下記でAzure AI サービスを利用するための認証情報を入力します。自身のAzure AIリソースからコピペを行ってください。*実務ではenvファイルなど別ファイルに認証情報は格納します。
-key = &#39;キーに置き換える&#39;
-credentials = CognitiveServicesCredentials(key)
-client = ComputerVisionClient(
-    endpoint=&quot;エンドポイントに置き換える&quot;,
-    credentials=credentials
-)
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1">#　モジュールの読み込み</span>
+<span class="kn">from</span> <span class="nn">azure.cognitiveservices.vision.computervision</span> <span class="kn">import</span> <span class="n">ComputerVisionClient</span>
+<span class="kn">from</span> <span class="nn">azure.cognitiveservices.vision.computervision.models</span> <span class="kn">import</span> <span class="n">VisualFeatureTypes</span>
+<span class="kn">from</span> <span class="nn">msrest.authentication</span> <span class="kn">import</span> <span class="n">CognitiveServicesCredentials</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># 下記でAzure AI サービスを利用するための認証情報を入力します。自身のAzure AIリソースからコピペを行ってください。*実務ではenvファイルなど別ファイルに認証情報は格納します。</span>
+<span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;キーに置き換える&#39;</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">CognitiveServicesCredentials</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ComputerVisionClient</span><span class="p">(</span>
+    <span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;エンドポイントに置き換える&quot;</span><span class="p">,</span>
+    <span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -210,11 +210,11 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 51, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>import requests
-import io
-from io import BytesIO
-import urllib
-from urllib.request import urlopen
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 </pre></div>
 </div>
 </div>
@@ -228,7 +228,7 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 52, Finished, Available)
 </div>
 </section>
 <section id="画像分析">
-<h2>画像分析<a class="headerlink" href="#画像分析" title="Link to this heading"></a></h2>
+<h2>画像分析<a class="headerlink" href="#画像分析" title="この見出しへのパーマリンク"></a></h2>
 <p>まずは画像分析から行っていきます。 ComputerVisionClient というメソッドを使用するにことによって、次のことができます。</p>
 <ul class="simple">
 <li><p>画像の分析: 顔、色、タグなど、特定の機能の画像を分析できます。</p></li>
@@ -239,21 +239,21 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 52, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><br/><span></span>import requests
-import numpy as np
-from PIL import Image
-from io import BytesIO
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><br/><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 
-# 画像のURL
-image_url = &quot;https://img-s1.onedio.com/id-54a6b6cd791c244d1f69539d/rev-0/w-1200/h-1200/f-jpg/s-b4ac45e2de2fda761a0d739d5be75a62ec3652b1.jpg&quot;
+<span class="c1"># 画像のURL</span>
+<span class="n">image_url</span> <span class="o">=</span> <span class="s2">&quot;https://img-s1.onedio.com/id-54a6b6cd791c244d1f69539d/rev-0/w-1200/h-1200/f-jpg/s-b4ac45e2de2fda761a0d739d5be75a62ec3652b1.jpg&quot;</span>
 
-# 画像を取得
-response = requests.get(image_url)
-image_bytes = BytesIO(response.content)
+<span class="c1"># 画像を取得</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+<span class="n">image_bytes</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-# PILを使用して画像を開く
-image_pil = Image.open(image_bytes)
-display(image_pil)
+<span class="c1"># PILを使用して画像を開く</span>
+<span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">image_pil</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -275,16 +275,16 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 53, Finished, Available)
 <p>上記の画像を使用し、分析を行います。まずは画像に写っている情報の検出を行いましょう。</p>
 </section>
 <section id="画像分析の実装">
-<h2>画像分析の実装<a class="headerlink" href="#画像分析の実装" title="Link to this heading"></a></h2>
+<h2>画像分析の実装<a class="headerlink" href="#画像分析の実装" title="この見出しへのパーマリンク"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span># image_analytics で上の画像分析する
-image_analysis = client.analyze_image(image_url,visual_features=[VisualFeatureTypes.tags])
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># image_analytics で上の画像分析する</span>
+<span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">image_url</span><span class="p">,</span><span class="n">visual_features</span><span class="o">=</span><span class="p">[</span><span class="n">VisualFeatureTypes</span><span class="o">.</span><span class="n">tags</span><span class="p">])</span>
 
-for tag in image_analysis.tags:
-    print(tag)
+<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">image_analysis</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -331,16 +331,16 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 54, Finished, Available)
 </div>
 </section>
 <section id="ランドマーク（建物の検出）">
-<h2>ランドマーク（建物の検出）<a class="headerlink" href="#ランドマーク（建物の検出）" title="Link to this heading"></a></h2>
+<h2>ランドマーク（建物の検出）<a class="headerlink" href="#ランドマーク（建物の検出）" title="この見出しへのパーマリンク"></a></h2>
 <p>次にlist_models という種類のAIモデル表示します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>models = client.list_models()
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
 
-for x in models.models_property:
-    print(x)
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">models_property</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -369,16 +369,16 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 55, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>domain = &quot;landmarks&quot;
-url = &quot;https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg&quot;
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="s2">&quot;landmarks&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg&quot;</span>
 
-# 画像を取得
-response = requests.get(url)
-image_bytes = BytesIO(response.content)
+<span class="c1"># 画像を取得</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">image_bytes</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-# PILを使用して画像を開く
-image_pil = Image.open(image_bytes)
-display(image_pil)
+<span class="c1"># PILを使用して画像を開く</span>
+<span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">image_pil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -402,14 +402,14 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 56, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>#画像のLandmarks の取得
-language = &quot;ja&quot;
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1">#画像のLandmarks の取得</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;ja&quot;</span>
 
-analysis = client.analyze_image_by_domain(domain, url, language)
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">analyze_image_by_domain</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
 
-for landmark in analysis.result[&quot;landmarks&quot;]:
-    print(landmark[&quot;name&quot;])
-    print(landmark[&quot;confidence&quot;])
+<span class="k">for</span> <span class="n">landmark</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;landmarks&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="s2">&quot;confidence&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -436,7 +436,7 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 57, Finished, Available)
 </div>
 </section>
 <section id="文章生成">
-<h2>文章生成<a class="headerlink" href="#文章生成" title="Link to this heading"></a></h2>
+<h2>文章生成<a class="headerlink" href="#文章生成" title="この見出しへのパーマリンク"></a></h2>
 <div class="line-block">
 <div class="line">最後に先程のエッフェル塔が検出された画像から画像の説明文の作成を行います。</div>
 <div class="line">describe_image のメソッドを使用すると簡単に画像から説明文を作成してくれます。実際に実装してみましょう。</div>
@@ -445,16 +445,16 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 57, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span># 画像の説明文の作成
-domain = &quot;landmarks&quot;
-language = &quot;ja&quot;
-max_descriptions = 3
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># 画像の説明文の作成</span>
+<span class="n">domain</span> <span class="o">=</span> <span class="s2">&quot;landmarks&quot;</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;ja&quot;</span>
+<span class="n">max_descriptions</span> <span class="o">=</span> <span class="mi">3</span>
 
-analysis = client.describe_image(url, max_descriptions, language)
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_image</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">max_descriptions</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
 
-for caption in analysis.captions:
-    print(caption.text)
-    print(caption.confidence)
+<span class="k">for</span> <span class="n">caption</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">captions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caption</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caption</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -481,14 +481,14 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 58, Finished, Available)
 </div>
 <p>画像から説明文が生成されました。AI のConfidence（自信度）があまり高くないため少し違和感のある文章ではありますが、画像がどのような画像なのかは伝わるかと思います。</p>
 <section id="Text-Analytics">
-<h3>Text Analytics<a class="headerlink" href="#Text-Analytics" title="Link to this heading"></a></h3>
+<h3>Text Analytics<a class="headerlink" href="#Text-Analytics" title="この見出しへのパーマリンク"></a></h3>
 <p>次に自然言語処理の実装を行います。Text Analyticsというサービスのセンチメント分析を行いましょう。</p>
 <p>文章中から感情を判断してくれます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>!pip install azure-ai-textanalytics
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>azure-ai-textanalytics
 </pre></div>
 </div>
 </div>
@@ -522,8 +522,8 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/trusted-service-user/
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>from azure.ai.textanalytics import TextAnalyticsClient
-endpoint=&quot;エンドポイントに置き換える&quot;
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">azure.ai.textanalytics</span> <span class="kn">import</span> <span class="n">TextAnalyticsClient</span>
+<span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;エンドポイントに置き換える&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -539,29 +539,29 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 60, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">text_analytics_client</span> <span class="o">=</span> <span class="n">TextAnalyticsClient</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">credential</span><span class="o">=</span><span class="n">AzureKeyCredential</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
 
-# あるスカイダイビングの口コミ
-documents = [
-    &quot;&quot;&quot;人生で最高の日を過ごした。スカイダイビングに行くことを決めて、自分の人生全体にもっと感謝するようになった。
-    インストラクターとも深い絆で結ばれ、彼女に生涯の友ができたような気がします。&quot;&quot;&quot;,
-    &quot;&quot;&quot;これは時間の無駄だった。このドロップの景色はどれも非常に退屈で、私が見たのは草だけだった。0/10
-    ダイバーには勧められない、&quot;&quot;&quot;,
-    &quot;&quot;&quot;これはかなり良かった！景色はまあまあだったし、インストラクターと一緒に楽しめた！私の経験についてあまり文句を言うことはできない&quot;&quot;&quot;,
-    &quot;&quot;&quot;私の経験には一言しかありません： WOW!!!！このような素晴らしいスカイダイビング会社が私の家のすぐ近くにあったなんて信じられません。
-    私は間違いなくリピーターになるでしょう！私は間違いなくリピーターになり、私の祖母もスカイダイビングに連れて行きたいです、
-    祖母もきっと気に入ると思います！&quot;&quot;&quot;
-]
+<span class="c1"># あるスカイダイビングの口コミ</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="p">[</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;人生で最高の日を過ごした。スカイダイビングに行くことを決めて、自分の人生全体にもっと感謝するようになった。</span>
+<span class="sd">    インストラクターとも深い絆で結ばれ、彼女に生涯の友ができたような気がします。&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;これは時間の無駄だった。このドロップの景色はどれも非常に退屈で、私が見たのは草だけだった。0/10</span>
+<span class="sd">    ダイバーには勧められない、&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;これはかなり良かった！景色はまあまあだったし、インストラクターと一緒に楽しめた！私の経験についてあまり文句を言うことはできない&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;私の経験には一言しかありません： WOW!!!！このような素晴らしいスカイダイビング会社が私の家のすぐ近くにあったなんて信じられません。</span>
+<span class="sd">    私は間違いなくリピーターになるでしょう！私は間違いなくリピーターになり、私の祖母もスカイダイビングに連れて行きたいです、</span>
+<span class="sd">    祖母もきっと気に入ると思います！&quot;&quot;&quot;</span>
+<span class="p">]</span>
 
-# Text Analyticsの実装
-result = text_analytics_client.analyze_sentiment(documents, show_opinion_mining=True)
-#結果の成形と表示
-docs = [doc for doc in result if not doc.is_error]
+<span class="c1"># Text Analyticsの実装</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">text_analytics_client</span><span class="o">.</span><span class="n">analyze_sentiment</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span> <span class="n">show_opinion_mining</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#結果の成形と表示</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">doc</span><span class="o">.</span><span class="n">is_error</span><span class="p">]</span>
 
-print(&quot;Let&#39;s visualize the sentiment of each of these documents&quot;)
-for idx, doc in enumerate(docs):
-    print(f&quot;Document text: {documents[idx]}&quot;)
-    print(f&quot;Overall sentiment: {doc.sentiment}&quot;)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let&#39;s visualize the sentiment of each of these documents&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document text: </span><span class="si">{</span><span class="n">documents</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Overall sentiment: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">sentiment</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -595,7 +595,7 @@ Overall sentiment: positive
 </div>
 </section>
 <section id="Document-Intelligence">
-<h3>Document Intelligence<a class="headerlink" href="#Document-Intelligence" title="Link to this heading"></a></h3>
+<h3>Document Intelligence<a class="headerlink" href="#Document-Intelligence" title="この見出しへのパーマリンク"></a></h3>
 <div class="line-block">
 <div class="line">レシートや領収書などの文字認識を行います。</div>
 <div class="line">ただ文字認識を行うだけではなく、データのエンティティ（ロケーション・日程・住所）を保持しながらフォーム抽出を行います。</div>
@@ -605,7 +605,7 @@ Overall sentiment: positive
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>!pip install azure-ai-formrecognizer azure-core
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>azure-ai-formrecognizer<span class="w"> </span>azure-core
 </pre></div>
 </div>
 </div>
@@ -642,10 +642,10 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /home/trusted-service-user/
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>import time
-from azure.ai.formrecognizer import DocumentAnalysisClient
-from azure.core.credentials import AzureKeyCredential
-from datetime import datetime
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">azure.ai.formrecognizer</span> <span class="kn">import</span> <span class="n">DocumentAnalysisClient</span>
+<span class="kn">from</span> <span class="nn">azure.core.credentials</span> <span class="kn">import</span> <span class="n">AzureKeyCredential</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 </pre></div>
 </div>
 </div>
@@ -665,26 +665,26 @@ StatementMeta(b3e1c730-80e9-4c9b-ac16-f6e393b9ab8c, 0, 63, Finished, Available)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span>client = DocumentAnalysisClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+<div class="input_area highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">DocumentAnalysisClient</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">credential</span><span class="o">=</span><span class="n">AzureKeyCredential</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
 
 
-# ファイルを読み込んで
-file_path = &quot;Users/cloud（アカウント番号に置き換える）/Amazon.co.jp - 注文番号 503-5459522-3239010 (1).pdf&quot;
-#自身のアカウント番号に書き換えてください。アカウントのメールアドレスの @trainocate.biz の前の番号です。
-with open(file_path, &quot;rb&quot;) as file:
-    print(f&quot;{datetime.now()}: アップロード開始&quot;)
+<span class="c1"># ファイルを読み込んで</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;Users/cloud（アカウント番号に置き換える）/Amazon.co.jp - 注文番号 503-5459522-3239010 (1).pdf&quot;</span>
+<span class="c1">#自身のアカウント番号に書き換えてください。アカウントのメールアドレスの @trainocate.biz の前の番号です。</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">: アップロード開始&quot;</span><span class="p">)</span>
 
-    # 分析開始
-    poller = client.begin_analyze_document(&quot;prebuilt-document&quot;, file)
+    <span class="c1"># 分析開始</span>
+    <span class="n">poller</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">begin_analyze_document</span><span class="p">(</span><span class="s2">&quot;prebuilt-document&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
 
-    # ステータスが完了になるまでポーリング
-    while not poller.done():
-        print(f&quot;{datetime.now()}: Waiting...&quot;)
-        time.sleep(3)
+    <span class="c1"># ステータスが完了になるまでポーリング</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">poller</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">: Waiting...&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-    # 結果を取得
-    result = poller.result()
-    print(result)
+    <span class="c1"># 結果を取得</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">poller</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -692,7 +692,7 @@ with open(file_path, &quot;rb&quot;) as file:
 <p>実装は以上です。クラウドを使用して高度な画像処理を実装しました。最後に下記について考えてみましょう。</p>
 </section>
 <section id="まとめ">
-<h3>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h3>
+<h3>まとめ<a class="headerlink" href="#まとめ" title="この見出しへのパーマリンク"></a></h3>
 <p>実装が終わったら下記について考えて見ましょう。</p>
 <ul class="simple">
 <li><p>Azure AI サービスでの画像処理とローカルでの画像処理モデルの違いはなんですか？</p></li>

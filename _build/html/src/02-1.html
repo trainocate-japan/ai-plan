@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>【ワーク 1 】 画像分類モデルの作成 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -102,23 +102,23 @@
            <div itemprop="articleBody">
              
   <section id="【ワーク-1-】-画像分類モデルの作成">
-<h1>【ワーク 1 】 画像分類モデルの作成<a class="headerlink" href="#【ワーク-1-】-画像分類モデルの作成" title="Link to this heading"></a></h1>
+<h1>【ワーク 1 】 画像分類モデルの作成<a class="headerlink" href="#【ワーク-1-】-画像分類モデルの作成" title="この見出しへのパーマリンク"></a></h1>
 <p>本章では Custom Vision を用いて画像分類モデルの作成を行います。</p>
 <p>Azure のアカウント情報は講師より案内があります。</p>
 <section id="Custom-Visionについて">
-<h2>Custom Visionについて<a class="headerlink" href="#Custom-Visionについて" title="Link to this heading"></a></h2>
+<h2>Custom Visionについて<a class="headerlink" href="#Custom-Visionについて" title="この見出しへのパーマリンク"></a></h2>
 <p>Microsoft Custom Visionは、独自の画像分類モデルを簡単に構築し、デプロイするためのサービスです。 ビジョンAIを使用して、画像を異なるカテゴリに分類するカスタムモデルを作成します。 ### Custom Visionの利点 ユーザーフレンドリー: 直感的なユーザーインターフェースを備えており、初心者でも使いやすいです。 自動学習: ラベリングされた画像データを使用して、自動的に学習とモデルの改善を行います。 クラウドベース: クラウド上でモデルを作成し、簡単にデプロイすることができます。</p>
 </section>
 <section id="手順">
-<h2>手順<a class="headerlink" href="#手順" title="Link to this heading"></a></h2>
+<h2>手順<a class="headerlink" href="#手順" title="この見出しへのパーマリンク"></a></h2>
 <section id="Azure-へログイン">
-<h3>Azure へログイン<a class="headerlink" href="#Azure-へログイン" title="Link to this heading"></a></h3>
+<h3>Azure へログイン<a class="headerlink" href="#Azure-へログイン" title="この見出しへのパーマリンク"></a></h3>
 <p>Web ブラウザを開き、<a class="reference external" href="https://azure.microsoft.com/ja-jp/get-started/azure-portal">Azure ポータル</a>にアクセスします。サインインを選択し、 ユーザー名とパスワードを入力して、アカウントにサインインします。</p>
 <p>サインインができると下記のようなAzure のホーム画面に遷移します。</p>
 <p><img alt="01" src="../_images/01.png" /></p>
 </section>
 <section id="Azure-AI-マルチアカウントのリソースを作成">
-<h3>Azure AI マルチアカウントのリソースを作成<a class="headerlink" href="#Azure-AI-マルチアカウントのリソースを作成" title="Link to this heading"></a></h3>
+<h3>Azure AI マルチアカウントのリソースを作成<a class="headerlink" href="#Azure-AI-マルチアカウントのリソースを作成" title="この見出しへのパーマリンク"></a></h3>
 <p>Azure のホーム画面の左上にある「リソースの作成」ボタンをクリックします。</p>
 <p>検索バーに「Azure AI」と入力し、候補から「Azure AI Service」を選択します。</p>
 <p><img alt="02" src="../_images/02.png" /></p>
@@ -138,9 +138,9 @@
 </section>
 </section>
 <section id="CustomVision-で画像分類モデルを作成">
-<h2>CustomVision で画像分類モデルを作成<a class="headerlink" href="#CustomVision-で画像分類モデルを作成" title="Link to this heading"></a></h2>
+<h2>CustomVision で画像分類モデルを作成<a class="headerlink" href="#CustomVision-で画像分類モデルを作成" title="この見出しへのパーマリンク"></a></h2>
 <section id="プロジェクト作成">
-<h3>プロジェクト作成<a class="headerlink" href="#プロジェクト作成" title="Link to this heading"></a></h3>
+<h3>プロジェクト作成<a class="headerlink" href="#プロジェクト作成" title="この見出しへのパーマリンク"></a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><a class="reference external" href="https://customvision.ai/">Custom Visionポータル</a>にアクセスします。</div>
@@ -159,7 +159,7 @@
 <p>最後に CreateProject を選択し、プロジェクトの作成を行います。</p>
 </section>
 <section id="CustomVision-を用いた画像処理・学習">
-<h3>CustomVision を用いた画像処理・学習<a class="headerlink" href="#CustomVision-を用いた画像処理・学習" title="Link to this heading"></a></h3>
+<h3>CustomVision を用いた画像処理・学習<a class="headerlink" href="#CustomVision-を用いた画像処理・学習" title="この見出しへのパーマリンク"></a></h3>
 <p><a class="reference external" href="https://drive.google.com/file/d/1lrD1Xa7F8JOrkTxx9deQbfgXdRozUHiC/view?usp=drive_link">こちら</a>より学習にて使用するデータのダウンロードを行って下さい。</p>
 <p>次に画像分類の モデル を作成するための 「画像の追加(add images)」をクリックし、サンプルデータをアップロードします。</p>
 <p><img alt="addimage" src="../_images/01.jpg" /></p>
@@ -184,7 +184,7 @@
 <p><img alt="data" src="../_images/07.jpg" /></p>
 </section>
 <section id="モデルの検証・テスト">
-<h3>モデルの検証・テスト<a class="headerlink" href="#モデルの検証・テスト" title="Link to this heading"></a></h3>
+<h3>モデルの検証・テスト<a class="headerlink" href="#モデルの検証・テスト" title="この見出しへのパーマリンク"></a></h3>
 <p>precision と記載がありますが精度です（MSドキュメント引用）</p>
 <p>犬と猫を見分ける人間に取っては簡単な実装ですが精度が100 %ではないことが確認できます。 次のことについて考えてみて下さい。</p>
 <ul class="simple">
@@ -195,7 +195,7 @@
 <p>【補足】 画面の右上の Predictions を選択するとモデルのテストをすることができます。</p>
 <p>試しに、ダウンロードをした画像と犬でも猫でもない画像を Web からダウンロードし、推論をさせてみましょう。 犬でも猫でもない画像に対してもどちらかの予測結果が出力されたのではないでしょうか。 こちらも特化型 AI の特徴です。生成 AI のような汎用型の AI ではないため、学習をした際のラベルのどちらかに予測結果が推論されます。</p>
 <section id="【発展】">
-<h4>【発展】<a class="headerlink" href="#【発展】" title="Link to this heading"></a></h4>
+<h4>【発展】<a class="headerlink" href="#【発展】" title="この見出しへのパーマリンク"></a></h4>
 <div class="line-block">
 <div class="line">Q:モデルの精度向上をさせましょう。</div>
 <div class="line">実装結果からもわかるとおり、モデルの精度が十分ではありません。以下のようなデータの前処理を行い再学習をしましょう。</div>
@@ -207,7 +207,7 @@
 </section>
 </section>
 <section id="【補足】モデルのデプロイ">
-<h3>【補足】モデルのデプロイ<a class="headerlink" href="#【補足】モデルのデプロイ" title="Link to this heading"></a></h3>
+<h3>【補足】モデルのデプロイ<a class="headerlink" href="#【補足】モデルのデプロイ" title="この見出しへのパーマリンク"></a></h3>
 <p>モデルの精度が満足いく場合は、「Publish（デプロイ）」をクリックすることによってモデルをデプロイします。</p>
 <p>デプロイされたモデルにアクセスするためのエンドポイントURLやAPIキーが Prediction URL から提供されます。</p>
 <p><img alt="datadlou" src="../_images/08.jpg" /></p>
@@ -215,7 +215,7 @@
 </section>
 </section>
 <section id="まとめ">
-<h2>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h2>
+<h2>まとめ<a class="headerlink" href="#まとめ" title="この見出しへのパーマリンク"></a></h2>
 <div class="line-block">
 <div class="line">Microsoft Custom Visionを使用すると、独自の画像分類モデルを簡単に作成し、デプロイすることができます。 手順は直感的であり、初心者でも迅速にモデルを構築することができます。</div>
 <div class="line">また、実際のモデル構築（AI 構築）よりもデータを揃えたり、前処理を行うほうが時間や手間のかかることが理解できたのではないでしょうか。 最後に以下について考えて見ましょう。</div>

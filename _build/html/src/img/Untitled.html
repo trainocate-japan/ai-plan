@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>環境構築 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/translations.js?v=4dbe4bdc"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -82,12 +82,12 @@
            <div itemprop="articleBody">
              
   <section id="環境構築">
-<h1>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h1>
+<h1>環境構築<a class="headerlink" href="#環境構築" title="この見出しへのパーマリンク"></a></h1>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!pip install azure-cognitiveservices-vision-computervisionｆ
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>azure-cognitiveservices-vision-computervisionｆ
 </pre></div>
 </div>
 </div>
@@ -116,20 +116,20 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /anaconda/envs/azureml_py38
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
-from msrest.authentication import CognitiveServicesCredentials
-#　モジュールの読み込み
-from PIL import Image
-import os
-key = &#39;107d563c469e4fef8dc186b223eb63ed&#39;
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">azure.cognitiveservices.vision.computervision</span> <span class="kn">import</span> <span class="n">ComputerVisionClient</span>
+<span class="kn">from</span> <span class="nn">azure.cognitiveservices.vision.computervision.models</span> <span class="kn">import</span> <span class="n">VisualFeatureTypes</span>
+<span class="kn">from</span> <span class="nn">msrest.authentication</span> <span class="kn">import</span> <span class="n">CognitiveServicesCredentials</span>
+<span class="c1">#　モジュールの読み込み</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;107d563c469e4fef8dc186b223eb63ed&#39;</span>
 
-credentials = CognitiveServicesCredentials(key)
-client = ComputerVisionClient(
-    endpoint=&quot;https://koike02.cognitiveservices.azure.com/&quot;,
-    credentials=credentials
-)
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">CognitiveServicesCredentials</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ComputerVisionClient</span><span class="p">(</span>
+    <span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;https://koike02.cognitiveservices.azure.com/&quot;</span><span class="p">,</span>
+    <span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -142,36 +142,36 @@ client = ComputerVisionClient(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-import io
-from io import BytesIO
-import urllib
-from urllib.request import urlopen
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="画像分析">
-<h1>画像分析<a class="headerlink" href="#画像分析" title="Link to this heading"></a></h1>
+<h1>画像分析<a class="headerlink" href="#画像分析" title="この見出しへのパーマリンク"></a></h1>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-import numpy as np
-from PIL import Image
-from io import BytesIO
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 
-# 画像のURL
-image_url = &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg&quot;
+<span class="c1"># 画像のURL</span>
+<span class="n">image_url</span> <span class="o">=</span> <span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg&quot;</span>
 
-# 画像を取得
-response = requests.get(image_url)
-image_bytes = BytesIO(response.content)
+<span class="c1"># 画像を取得</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+<span class="n">image_bytes</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-# PILを使用して画像を開く
-image_pil = Image.open(image_bytes)
-display(image_pil)
+<span class="c1"># PILを使用して画像を開く</span>
+<span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">image_pil</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -187,11 +187,11 @@ display(image_pil)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># image_analytics で上の画像分析する
-image_analysis = client.analyze_image(url,visual_features=[VisualFeatureTypes.tags])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># image_analytics で上の画像分析する</span>
+<span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">visual_features</span><span class="o">=</span><span class="p">[</span><span class="n">VisualFeatureTypes</span><span class="o">.</span><span class="n">tags</span><span class="p">])</span>
 
-for tag in image_analysis.tags:
-    print(tag)
+<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">image_analysis</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -220,16 +220,16 @@ for tag in image_analysis.tags:
 <p>建物、メトロポリス、ダウンタウン、外、街、人、ライトなど画像から様々な情報が取得できていることがわかります。ほんの数コードで高度な画像処理を行うことができました。</p>
 </section>
 <section id="ランドマーク（建物の検出）">
-<h1>ランドマーク（建物の検出）<a class="headerlink" href="#ランドマーク（建物の検出）" title="Link to this heading"></a></h1>
+<h1>ランドマーク（建物の検出）<a class="headerlink" href="#ランドマーク（建物の検出）" title="この見出しへのパーマリンク"></a></h1>
 <p>次にlist_models という種類のAIモデル表示します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>models = client.list_models()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
 
-for x in models.models_property:
-    print(x)
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">models_property</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -250,16 +250,16 @@ for x in models.models_property:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>domain = &quot;landmarks&quot;
-url = &quot;https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg&quot;
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="s2">&quot;landmarks&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg&quot;</span>
 
-# 画像を取得
-response = requests.get(url)
-image_bytes = BytesIO(response.content)
+<span class="c1"># 画像を取得</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">image_bytes</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-# PILを使用して画像を開く
-image_pil = Image.open(image_bytes)
-display(image_pil)
+<span class="c1"># PILを使用して画像を開く</span>
+<span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">image_pil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -275,14 +275,14 @@ display(image_pil)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#画像のLandmarks の取得
-language = &quot;ja&quot;
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#画像のLandmarks の取得</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;ja&quot;</span>
 
-analysis = client.analyze_image_by_domain(domain, url, language)
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">analyze_image_by_domain</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
 
-for landmark in analysis.result[&quot;landmarks&quot;]:
-    print(landmark[&quot;name&quot;])
-    print(landmark[&quot;confidence&quot;])
+<span class="k">for</span> <span class="n">landmark</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;landmarks&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="s2">&quot;confidence&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -300,7 +300,7 @@ for landmark in analysis.result[&quot;landmarks&quot;]:
 <div class="line">また、コードにて言語（language)を日本語に設定しているため推論結果も日本語で検出されています。この用に英語だけではない多言語にも対応していることがわかりました。他にも有名人などをこのモデルでは検出することが可能です。</div>
 </div>
 <section id="文章生成">
-<h2>文章生成<a class="headerlink" href="#文章生成" title="Link to this heading"></a></h2>
+<h2>文章生成<a class="headerlink" href="#文章生成" title="この見出しへのパーマリンク"></a></h2>
 <div class="line-block">
 <div class="line">最後に先程のエッフェル塔が検出された画像から画像の説明文の作成を行います。</div>
 <div class="line">describe_image のメソッドを使用すると簡単に画像から説明文を作成してくれます。実際に実装してみましょう。</div>
@@ -309,16 +309,16 @@ for landmark in analysis.result[&quot;landmarks&quot;]:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 画像の説明文の作成
-domain = &quot;landmarks&quot;
-language = &quot;ja&quot;
-max_descriptions = 3
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 画像の説明文の作成</span>
+<span class="n">domain</span> <span class="o">=</span> <span class="s2">&quot;landmarks&quot;</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;ja&quot;</span>
+<span class="n">max_descriptions</span> <span class="o">=</span> <span class="mi">3</span>
 
-analysis = client.describe_image(url, max_descriptions, language)
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_image</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">max_descriptions</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
 
-for caption in analysis.captions:
-    print(caption.text)
-    print(caption.confidence)
+<span class="k">for</span> <span class="n">caption</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">captions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caption</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caption</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
